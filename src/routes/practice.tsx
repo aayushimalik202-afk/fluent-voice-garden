@@ -17,10 +17,10 @@ export const Route = createFileRoute("/practice")({
 });
 
 function Practice() {
-  const [catId, setCatId] = useState(categories[0].id);
+  const [catId, setCatId] = useState(categories[0]!.id);
   const [idx, setIdx] = useState(0);
   const cat = categories.find((c) => c.id === catId)!;
-  const prompt = cat.items[idx % cat.items.length];
+  const prompt = cat.items[idx % cat.items.length] ?? "";
 
   return (
     <Layout>

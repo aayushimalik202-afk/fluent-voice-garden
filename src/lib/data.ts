@@ -63,5 +63,5 @@ export function todayKey(d = new Date()) {
 
 export function topicForDate(d = new Date()) {
   const dayIndex = Math.floor(new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime() / 86400000);
-  return dailyTopics[((dayIndex % dailyTopics.length) + dailyTopics.length) % dailyTopics.length];
+  return dailyTopics[((dayIndex % dailyTopics.length) + dailyTopics.length) % dailyTopics.length] ?? dailyTopics[0]!;
 }
